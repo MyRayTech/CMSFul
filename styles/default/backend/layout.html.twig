@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8" />
+        <title>{% if title %}{{ title|trans }} - {% endif %} {{ 'admin.panel'|trans}} | {{config('sitename')}}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/normalize.css') }}" />
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/admin_style.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />   
+    </head>
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+        {% if modal is defined %}
+            {% include('@styles/backend/modal.html.twig') %}
+        {% endif %}
+        <script src="{{ asset('build/admin.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+

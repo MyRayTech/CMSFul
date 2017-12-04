@@ -1,0 +1,6 @@
+## YAML Template.
+---
+
+api.admin.general.settings.get:
+    path: /settings
+    defaults: {_controller: CMS:Administration\Api\General\Settings:get}

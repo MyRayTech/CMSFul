@@ -1,0 +1,9 @@
+{% extends "@styles/backend/role/index.html.twig" %}
+
+{% block body %}
+    <h1 class="page-header">{{sub_header |trans}}</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    
+{% endblock %}

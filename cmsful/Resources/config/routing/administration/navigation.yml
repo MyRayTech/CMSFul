@@ -1,0 +1,17 @@
+## YAML Template.
+---
+admin_navigation_add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration\Navigation:add}
+
+admin_navigation_edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration\Navigation:edit}
+    
+admin_navigation_delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration\Navigation:delete}
+
+admin_navigation_manage:
+    path: "/"
+    defaults: {_controller: CMS:Administration\Navigation:index}

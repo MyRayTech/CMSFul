@@ -1,0 +1,18 @@
+{% extends "@styles/backend/layout.html.twig" %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div class="card">
+                    <div class="card-header">{{ sub_header |trans}}</div>
+                    <div class="card-block">
+                        {{form_start(form) }}
+                        {{form_widget(form) }}
+                        {{form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

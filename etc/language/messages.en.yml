@@ -1,0 +1,110 @@
+name: 'Name'
+first.name: 'First Name'
+user.list: 'User List'
+create.account: 'Create an Account'
+last.name: 'Last Name'
+username: 'Username'
+actions: 'Actions'
+add.page: 'Add a Page'
+page.list: 'Page List'
+create.page: 'Create a Page'
+url: 'URL'
+add.user: 'Add a User'
+logout: 'Logout'
+users: 'Users'
+content: 'Content'
+admin.home: 'Admin Home'
+home: 'Home'
+Toggle navigation: 'Toggle navigation'
+admin.panel: 'Admin Panel'
+overview: 'Overview'
+content.manager: 'Content Manager'
+reports: 'Reports'
+analytics: 'Analytics'
+export: 'Export'
+dashboard: 'Dashboard'
+users.Overview: 'Users Overview'
+create.user: 'Create a User'
+users.manager: 'Users Manager'
+search: 'Search'
+password: 'Password'
+email: 'Email'
+user: 'User'
+admin: 'Administrator'
+super.admin: 'Super Administrator'
+english: 'English'
+francais: 'Français'
+update.user: 'Update User'
+language: Language
+navigation: Navigation
+edit.user: Edit User
+content.pages: Content Pages
+blog.posts: Blog Posts
+user.manage: Manage Users
+role.manage: Manage Roles
+role.list: Role List
+create.role: Create a role
+edit.role: Edit Role
+update.role: Update Role
+general: General
+general.settings: Site Settings
+click.here: Click Here
+clear.cache: Clear Cache
+userful.links: Useful Link
+powered.by: Powered By
+
+# Widget Section #
+widgets: Widgets
+widget.name: 'Calling name for Widget:'
+widget.list: Widget List
+widget.add: Create a Widget
+widget.id: Widget Identifier
+
+
+# Common #
+published.date: "Date published:"
+comment: Comment
+save: Save
+edit: Edit
+remove: Remove
+author: Author
+last.edit.time: Last edit time
+
+# Navigation #
+navigation.list: Navigation list
+add.nav: Create Navigation Link
+
+# Content Pages #
+page.description: Here is a list of all your content pages for the site  the link is automaticly made from the name of the page by adding '-' between words.
+
+
+# Image Gallery #
+gallery: Gallery
+gallery.settings: Gallery Settings
+add.image: Add Image
+
+
+# Portfolio Projects #
+portfolio.projects: Portfolio Projects
+project.list: Project List
+project.create: Create new project
+project.settings: Portfolio Settings
+
+# News Articles #
+news: 'News'
+news.list: 'News Articles List'
+create.article: 'Create a Article'
+news.overview: 'News Overview'
+news.manager: 'News Manager'
+news.articles: News Articles
+
+# Blog Posts #
+posts.list: Blog Posts List
+create.post: Create a Post
+
+# Administration #
+sitename: Site Name
+logo: Logo
+default.locale: Default locale
+timezone: Timezone
+time.format: Time Format (PHP Date() function)

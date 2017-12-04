@@ -1,0 +1,55 @@
+{% extends "@styles/layout.html.twig" %}
+
+{% set title = 'Portfolio' %}
+{% block stylesheets %}<link rel="stylesheet" type="text/css" href="{{ asset('css/portfolio.css') }}" />{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <!-- Page Heading -->
+    <div class="row row_title_galery">
+        <div class="offset-md-4 col-lg-4">
+            <h1 class="page-header img-fluid bg_title_folio">{{config('portfolio.title') | raw}}</h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    {% for project in projects %} 
+    <!-- Project One -->
+    <div class="row">
+        {% if loop.index is divisible by(2) %}
+        <div class="col-md-7 portfolio-item_1col">
+            <a href="#">
+                <img class="img-fluid img_border" src="{{ asset(project.image, 'portfolio') }}" alt="Your Title">
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3>{{project.name}}</h3>
+            {% if project.subheader != '' %}<h4>{{project.subheader}}</h4>{% endif %}
+            <p>{{project.description}}</p>
+            <a class="btn btn-primary" href="{{base_url}}/portfolio/detail/{{project.id}}">View Project <i class="fa fa-chevron-right"></i></a>
+        </div>
+        {% else %}
+          <div class="col-md-5">
+            <h3>{{project.name}}</h3>
+            {% if project.subheader != '' %}<h4>{{project.subheader}}</h4>{% endif %}
+            <p>{{project.description}}</p>
+            <a class="btn btn-primary" href="{{base_url}}/portfolio/detail/{{project.id}}">View Project <i class="fa fa-chevron-right"></i></a>
+        </div> 
+        <div class="col-md-7 portfolio-item_1col">
+            <a href="#">
+                <img class="img-fluid img_border" src="{{ asset(project.image, 'portfolio') }}" alt="Your Title">
+            </a>
+        </div>
+        {% endif %}
+    </div>
+        <hr />
+   {% endfor %}
+    <!-- /.row -->           
+
+    <!-- Pagination -->
+    <div id="paginator">
+        {{ knp_pagination_render(projects) }}
+    </div>
+    </div>
+    
+{% endblock %}
+

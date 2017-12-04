@@ -1,0 +1,17 @@
+## YAML Template.
+---
+admin_widget_add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration\Widget:add}
+
+admin_widget_edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration\Widget:edit}
+    
+admin_widget_delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration\Widget:delete}
+
+admin_widget_manage:
+    path: "/"
+    defaults: {_controller: CMS:Administration\Widget:index}

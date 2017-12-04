@@ -1,0 +1,32 @@
+{# empty Twig template #}
+<ul>
+    {% for menu in navigation %}
+        {% if menu.parent.name == 'none' %}
+                {# Menu with dropdown #}
+                {% if menu.children is not empty %}
+                <li class="dropdown" ><a class="dropdown-toggle"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{base_url}}{{menu.url}}" title="{{menu.name |trans}}">{{menu.name |trans}}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% for sub_menu in menu.children %}
+                        <a class="dropdown-item" href="{{base_url}}{{sub_menu.url}}" title="{{sub_menu.name |trans}}">{{sub_menu.name |trans}}</a>
+                            {% if sub_menu.children is not empty %}
+                            <ul>
+                                {% for sub_sub_menu in sub_menu.children %}
+                                    <li><a href="{{base_url}}{{sub_sub_menu.url}}" title="{{sub_sub_menu.name |trans}}">{{sub_sub_menu.name |trans}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                </li>
+                {% else %}
+                    {# Menu without dropdown #}
+                    <li class=""><a class="" href="{{base_url}}{{menu.url}}" title="{{menu.name |trans}}">{{menu.name |trans}}</a></li>
+                {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <li class="" ><a class="" href="{{base_url}}logout">{{'logout'|trans}}</a></li>
+        {% else %}
+        <li class=""><a class="" href="{{base_url}}login">{{'login'|trans}}</a></li>    
+        {% endif %}
+</ul>

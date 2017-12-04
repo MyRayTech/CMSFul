@@ -1,0 +1,21 @@
+{# empty Twig template #}
+{% block form_rows %}
+{% spaceless %}
+        {% for child in form %}
+            {{ form_row(child) }}
+        {% endfor %}
+    {{ form_rest(form) }}
+{% endspaceless %}
+{% endblock form_rows %}
+{% block form_row %}
+    {% spaceless %}
+        <div class="form-group row">
+            {{ form_label(form) }}<div class="col-md-9">{{ form_widget(form) }}</div>
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+{% block submit_widget %}
+    {% spaceless %}
+       {{ form_widget(form) }}
+    {% endspaceless %}
+{% endblock submit_widget %}

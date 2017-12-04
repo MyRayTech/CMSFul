@@ -1,0 +1,74 @@
+services:
+    cms.slugger:
+        class: CMS\Utils\Slugger
+    cms.user_provider:
+        class: CMS\Security\UserProvider
+        arguments:
+            - "@doctrine.orm.entity_manager"
+    cms.user_manager.default:
+        class: CMS\Doctrine\UserManager
+        arguments: 
+            - "@cms.util.password_updater"
+            - "@cms.util.canonical_fields_updater"
+            - "@cms.util.object_manager"
+            - "%cms.user_entity%"
+        public: false
+    cms.news_manager.default:
+        class: CMS\Doctrine\NewsManager
+        arguments:
+            - '@cms.slugger'
+            - '@cms.util.object_manager'
+            - '%cms.news_entity%'
+    cms.util.object_manager:
+        class: Doctrine\Common\Persistence\ObjectManager
+        arguments: 
+        - ~
+        public: false
+    cms.util.canonicalizer.default:
+        class: CMS\Util\Canonicalizer
+        public: false
+        
+    cms.util.token_generator.default:
+        class: CMS\Util\TokenGenerator
+        
+    cms.util.password_updater:
+        class: CMS\Util\PasswordUpdater
+        arguments: 
+            - "@security.encoder_factory"
+        public: false
+    cms.util.canonical_fields_updater:
+        class: CMS\Util\CanonicalFieldsUpdater
+        arguments: 
+            - '@cms.util.username_canonicalizer'
+            - '@cms.util.email_canonicalizer'
+        public: false
+    cms.config:
+        class: CMS\Services\ConfigService
+        arguments: 
+            - "@doctrine.orm.entity_manager"
+            - "@service_container"
+    cms.acl:
+        class: CMS\Security\Authorization
+        arguments: 
+            - "@service_container"
+            - "@security.token_storage"
+    twig.extension.string_loader:
+        class: Twig_Extension_StringLoader
+        tags:
+            - { name: twig.extension }
+    cms.controller.widget:
+        class: CMS\Controller\WidgetController
+        arguments: 
+            - "@doctrine.orm.entity_manager"
+    cms.locale_listener:
+        class: CMS\EventListener\LocaleListener
+        arguments: 
+            - '%kernel.default_locale%'
+        tags:
+            - { name: kernel.event_subscriber }
+    cms.user_locale_listener:
+        class: CMS\EventListener\UserLocaleListener
+        arguments: 
+            - '@session'
+        tags:
+            - {name: kernel.event_listener, event: security.interactive_login, method: onInteractiveLogin }

@@ -1,0 +1,12 @@
+portfolio.project_detail:
+    path: "/%project_link%/project/{slug}"
+    defaults: { _controller: CMS:Portfolio:project}
+    
+portfolio.page:
+    path: "/%project_link%/page/{page}"
+    defaults: { _controller: CMS:Portfolio:index }
+
+portfolio.index:
+    path: "/%project_link%/"
+    defaults: { _controller: CMS:Portfolio:index, page: 1 }
+ 

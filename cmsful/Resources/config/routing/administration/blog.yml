@@ -1,0 +1,17 @@
+## YAML Template.
+---
+admin_blog_add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration\Blog:add}
+
+admin_blog_edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration\Blog:edit}
+    
+admin_blog_delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration\Blog:delete}
+
+admin_blog_manage:
+    path: "/"
+    defaults: {_controller: CMS:Administration\Blog:index}

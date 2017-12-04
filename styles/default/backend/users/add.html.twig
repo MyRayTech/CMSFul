@@ -1,0 +1,37 @@
+{% extends "@styles/backend/users/index.html.twig" %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div class="card">
+                    <div class="card-header">{{ sub_header |trans}}</div>
+                    <div class="card-block">
+                        {{ form_start(form) }}
+                        <div class="row">
+                            <div class="col-md-4">{{ form_label(form.firstName) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.firstName) }}</div>
+                            <div class="col-md-4">{{ form_label(form.lastName) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.lastName) }}</div>
+                            <div class="col-md-4">{{ form_label(form.username) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.username) }}</div>
+                            <div class="col-md-4">{{ form_label(form.email) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.email) }}</div>
+                            <div class="col-md-4">{{ form_label(form.locale) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.locale) }}</div>
+                            <div class="col-md-4">{{ form_label(form.password) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.password) }}</div>
+                            <div class="col-md-4">{{ form_label(form.role) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.role) }}</div>
+                            <div class="col-md-4">{{ form_label(form.avatar) }}</div>
+                             <div class="col-md-8">{{ form_widget(form.avatar) }}</div>
+                            {{ form_widget(form._token) }}
+                            <div class="col-md-12">{{ form_widget(form.save) }}</div>
+                            {{ form_end(form, {'render_rest': false}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            {% endblock %}

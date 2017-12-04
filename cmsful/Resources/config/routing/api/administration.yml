@@ -1,0 +1,6 @@
+## YAML Template.
+---
+
+api.admin.general:
+    resource: "@CMS/Resources/config/routing/api/administration/general.yml"
+    prefix: /general

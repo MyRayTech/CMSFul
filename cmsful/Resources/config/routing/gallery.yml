@@ -1,0 +1,7 @@
+gallery.page:
+    path: /%gallery_link%/page/{page}
+    defaults: { _controller: CMS:Gallery:index }
+    
+gallery.main:
+    path: /%gallery_link%
+    defaults: { _controller: CMS:Gallery:index, page: 1 }

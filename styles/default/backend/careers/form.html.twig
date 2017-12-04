@@ -1,0 +1,15 @@
+{% extends "@styles/backend/careers/index.html.twig" %}
+
+{% block body %}
+    <h2>{{sub_header |trans }}</h2>
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_label(form.name) }}:{{ form_widget(form.name) }}<br />
+    {{ form_label(form.amount) }}: {{ form_widget(form.amount) }}<br />
+    {{ form_label(form.text) }}: {{ form_widget(form.text) }}<br />
+    {{ form_label(form.lang) }}: {{ form_widget(form.lang) }}<br />
+    {{ form_label(form.date) }}: {{ form_widget(form.date) }}<br />
+    {{ form_widget(form.save) }}
+    {{ form_end(form, {'render_rest': true}) }}
+    
+{% endblock %}

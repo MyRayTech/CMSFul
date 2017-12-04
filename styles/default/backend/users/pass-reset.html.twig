@@ -1,0 +1,12 @@
+{% extends "@styles/backend/users/index.html.twig" %}
+
+{% block body %}
+	<h1 class="page-header">{{ sub_header |trans}}</h1>
+	<div class="container-fluid">
+		{{ form_start(form) }}
+                {{ form_label(form.password) }}: {{ form_widget(form.password) }}<br />
+                {{ form_widget(form._token) }}
+                {{ form_widget(form.save) }}
+		{{ form_end(form, {'render_rest': false}) }}
+	</div>
+{% endblock %}

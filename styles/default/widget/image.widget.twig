@@ -1,0 +1,1 @@
+<img {% if code.class is defined %}class='{{code.class}}' {% endif %}{% if code.style is defined %} style='{{code.style}}' {% endif %} src='{{asset(code.url)}}' alt='{%if code.alt is defined %}{{code.alt}}{% endif %}' />

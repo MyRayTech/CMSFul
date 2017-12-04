@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/dist/css/bootstrap.min.css', 'bower') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css','bower') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+        <script src="{{ asset('jquery/dist/jquery.min.js', 'bower') }}"></script>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <script src="{{ asset('tether/dist/js/tether.min.js', 'bower') }}"></script>
+        <script src="{{ asset('bootstrap/dist/js/bootstrap.min.js', 'bower') }}"></script>
+    </body>
+</html>

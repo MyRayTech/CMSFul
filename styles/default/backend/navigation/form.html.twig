@@ -1,0 +1,15 @@
+{% extends "@styles/backend/navigation/index.html.twig" %}
+
+{% block body %}
+    <h2>{{ sub_header |trans }}</h2>
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_label(form.name) }}:{{ form_widget(form.name) }}<br />
+    {{ form_label(form.url) }}:{{ form_widget(form.url) }}<br />
+    {{ form_label(form.parent) }}:{{ form_widget(form.parent) }}<br />
+    {{ form_label(form.weight) }}: {{ form_widget(form.weight) }}<br />
+    {{ form_row(form._token) }}
+    {{ form_widget(form.save) }}
+    {{ form_end(form, {'render_rest': false}) }}
+    
+{% endblock %}

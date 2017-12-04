@@ -1,0 +1,7 @@
+widget_twig_function:
+    class: CMS\Twig\WidgetExtension
+    public: false
+    arguments:
+        
+    tags:
+       - {name: twig.extension}

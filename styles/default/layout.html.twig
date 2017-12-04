@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=700, initial-scale=1, shrink-to-fit=yes">
+        <meta charset="UTF-8" />
+        <title>{{ title |trans}}{% if sitename is defined %} | {{sitename}}{% endif %}</title>
+        <!-- Latest compiled and minified CSS -->
+        {#<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />#}
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/app.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/stylesheet.css') }}" />
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <script src="{{ asset('build/app.js') }}"></script>
+</head>
+<body>
+    {# Site Header #}
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-4 logo text-center"><img class="img-fluid img_logo" src="{{ asset('assets/images/cmsful_logo.png') }}" alt="CMS FUL"></div>
+            </div>
+        </div>
+    </header>
+    {# Site Navigation #}
+    <nav class="menu">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample"></button>
+        <div class="collapse" id="collapseExample">
+            {{ render(controller('CMS:Navigation:createView')) }}
+        </div>
+    </nav>
+    {# Main Site Section #}
+    <main>
+    {% block body %}{% endblock %}
+
+</main>
+{#  Site Footer #}
+<footer> 
+    <div>&copy; 2017 <a href="https://myraytech.net">RayTech Hosting</a></div>
+</footer>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

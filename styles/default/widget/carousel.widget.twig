@@ -1,0 +1,18 @@
+
+  <ul id="{{slider.identifier}}"><!-- the 3d box -->
+    {% for slide in slider.images %}
+        <li{% if slide.class is defined %} class='{{slide.class}}'{% endif %}>
+          <img src="{{ asset(slide.url) }}" alt='{% if slide.alt is defined %}{{slide.alt}}{% endif %}' {% if slide.caption is defined %}title='{{slide.caption}}'{% endif %} />
+        </li>
+    {% endfor %}
+  </ul>
+<script type='text/javascript'>
+    $(document).ready(function() {
+        $('#{{slider.identifier}}').bxSlider({
+            mode: 'fade',
+            auto: true,
+            controls: false,
+            touchEnabled: true
+        });
+    });
+</script>

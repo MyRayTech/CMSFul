@@ -1,0 +1,6 @@
+
+
+{% for comment in comments %}
+    <hr />
+    {{comment.author.username}} says: {{comment.text}}
+{% endfor %}

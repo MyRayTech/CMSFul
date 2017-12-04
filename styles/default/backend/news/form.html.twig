@@ -1,0 +1,13 @@
+{% extends "@styles/backend/news/index.html.twig" %}
+
+{% block body %}
+    <h1 class="page-header">{{sub_header}}</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    <script>
+        $(document).ready(function() {
+            CKEDITOR.replace('article_content');
+        });
+    </script>
+{% endblock %}

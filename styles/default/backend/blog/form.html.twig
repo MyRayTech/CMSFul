@@ -1,0 +1,21 @@
+{% extends "@styles/backend/blog/index.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">{{sub_header |trans }}</div>
+                <div class="card-block">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    {{ form_label(form.title) }}: {{ form_widget(form.title) }}<br />
+                    {{ form_label(form.post) }}: {{ form_widget(form.post) }}<br />
+                    {{ form_label(form.lang) }}: {{ form_widget(form.lang) }}<br />
+                    {{ form_row(form._token) }}
+                    {{ form_widget(form.save) }}
+                    {{ form_end(form, {'render_rest': false}) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

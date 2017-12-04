@@ -1,0 +1,26 @@
+{% extends "@styles/layout.html.twig" %}
+{% set title = 'Log in' %}
+{% set active = 'Account' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="from_login col-md-4 offset-md-4 text-center">
+                <form action="{{ path('security_check') }}" method="post">
+                    <h2>{{ 'Please sign in' }}</h2>
+                    <label for="inputUsername">Username</label>
+                    <input type="text" name="_username" id="inputUsername" placeholder="Username" required autofocus><br />
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="_password" id="inputPassword"  placeholder="Password" required>
+                    <div>
+                        <label for="remember_me">
+                            <input type="checkbox" id="remember_me" name="_remember_me" checked> Remember me
+                        </label>
+                    </div>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <button type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

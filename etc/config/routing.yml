@@ -1,0 +1,9 @@
+api_login_check:
+    path: /api/login_check
+    
+cms:
+    resource: "@CMS/Resources/config/routing.yml"
+    
+#cms_dynamic:
+#    resource: .
+#    type: dynamic

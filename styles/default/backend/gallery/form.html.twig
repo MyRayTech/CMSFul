@@ -1,0 +1,15 @@
+{% extends "@styles/backend/gallery/index.html.twig" %}
+
+{% block body %}
+    <h2>{{sub_header |trans }}</h2>
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_label(form.filename) }}:{{ form_widget(form.filename) }}<br />
+    {{ form_label(form.file) }}:{{ form_widget(form.file) }}<br />
+    {{ form_label(form.thumbnail) }}: {{ form_widget(form.thumbnail) }}<br />
+    {{ form_label(form.description) }}: {{ form_widget(form.description) }}<br />
+    {{ form_row(form._token) }}
+    {{ form_widget(form.save) }}
+    {{ form_end(form, {'render_rest': false}) }}
+    
+{% endblock %}

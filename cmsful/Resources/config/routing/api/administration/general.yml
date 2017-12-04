@@ -1,0 +1,5 @@
+## YAML Template.
+---
+
+api.administration.general.settings:
+    resource: "@CMS/Resources/config/routing/api/administration/general/settings.yml"

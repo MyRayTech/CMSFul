@@ -1,0 +1,7 @@
+main_install:
+    path: /
+    defaults: { _controller: Install:Main:main, step: 1 }
+    
+step_install:
+    path: /step/{step}
+    defaults: { _controller: Install:Main:main, step: 1 }

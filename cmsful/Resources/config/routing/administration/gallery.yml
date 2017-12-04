@@ -1,0 +1,18 @@
+admin.gallery:
+    path: "/"
+    defaults: { _controller: CMS:Administration/Gallery:index }
+ 
+admin.gallery.settings:
+    path: "/settings"
+    defaults: { _controller: CMS:Administration/Gallery:settings }
+admin.gallery.add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration/Gallery:add }
+    
+admin.gallery.edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration/Gallery:edit }
+    
+admin.gallery.delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration/Gallery:delete }

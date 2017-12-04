@@ -1,0 +1,3 @@
+RewriteEngine On
+
+DirectoryIndex install_dev.php install.php

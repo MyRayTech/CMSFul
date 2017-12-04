@@ -1,0 +1,179 @@
+/* 
+    Created on : Apr 28, 2016, 9:37:23 AM
+    Author     : Reaper
+*/
+
+/*body{
+        padding-top: 50px;
+}*/
+body {
+    background-image: url(../images/cmsful_bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;  
+    background-size: cover;
+}
+/*Header start*/
+.logo {
+    margin-top: 10px;   
+}
+.img_logo {
+    border-radius: 30%;
+    padding: 3px;
+    border: 2px solid #000501;    
+}
+.img_logo:hover {
+    border-radius: 10%;
+    border: 2px solid #025AA5;       
+}
+/*End header*/
+
+/*Menu start*/
+.menu button {
+    display: none
+}
+.collapse {
+    display: block;
+}
+.menu {
+    text-align: center;
+}
+.menu > div > ul > li {
+    display: inline-block;
+    font-size:20px;
+    background-image: url(../images/menu.png);
+    background-size: 100% 100%;
+    padding: 15px 0;
+}
+.menu li:hover a {
+    text-decoration: none;
+    color: #000;
+}
+.menu > div > ul > li > a {
+    padding: 15px;
+}
+@media (max-width:768px){
+    .menu button {
+        display: block;
+    }
+    .collapse {
+        display: none;
+    }
+    .menu > div > ul > li {
+        display: block;
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+@media (max-width:400px){
+    .menu > div > ul > li {
+        background-size: 100% 100%;
+    }
+}
+a {
+    color: white;
+}
+a:hover {
+    color: yellow;
+}
+/*End menu*/
+/*
+ * Signin form
+ */
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+/*login form start*/
+.from_login {
+    text-align: center;
+}
+/*End login form*/    
+
+/*Portfolio start*/
+.page-header {
+    text-align: center;
+    color: #fff;
+    padding-bottom: 7px;
+}
+.bg_title_folio {
+    background-color: #000; 
+    border-radius: 7%;
+    border: 2px solid yellow;
+    -webkit-box-shadow: inset -19px -2px 145px -22px rgba(239,255,13,1);
+    -moz-box-shadow: inset -19px -2px 145px -22px rgba(239,255,13,1);
+    box-shadow: inset -19px -2px 145px -22px rgba(239,255,13,1);
+}
+.bg_title_folio:hover {
+    background-color: red;
+    border-radius: 7px;
+    border: 2px solid yellowgreen;
+    color: #000;    
+}
+.row_title_galery {
+    margin-bottom: 10px; 
+} 
+.portfolio-item {
+    text-align: center;
+}
+.img_border {
+    padding: 5px;
+    background-color: transparent;  
+    border: 1px solid #B2D43E;  
+    border-radius: 7px;
+}
+.img_border:hover {
+    border-radius: 20%;
+    padding: 5px;
+    background-color: transparent;  
+    border: 1px solid red; 
+}
+/*one colon*/
+.portfolio-item_1col {
+    text-align: center;        
+}  
+.row_margin_top {
+    margin-top: 10px;
+}
+
+.menu ul {
+    padding:10px 0;
+    margin:0;
+}
+
+
+
+
+

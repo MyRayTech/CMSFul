@@ -1,0 +1,17 @@
+## YAML Template.
+---
+admin_news_add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration\News:add}
+
+admin_news_edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration\News:edit}
+    
+admin_news_delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration\News:delete}
+
+admin_news_manage:
+    path: "/"
+    defaults: {_controller: CMS:Administration\News:index}

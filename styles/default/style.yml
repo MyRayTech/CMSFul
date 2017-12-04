@@ -1,0 +1,7 @@
+default:
+    version: 1.0
+    parent: ~
+    authors:
+        - ["Kevin Roy", "royk@myrayech.net"]
+        - ["Sylvain Lagacé", "slywolf76@hotmail.com"]
+        - ["Kenny Lindelof", "linkenny@myraytech.net"]

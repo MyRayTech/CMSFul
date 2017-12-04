@@ -1,0 +1,8 @@
+{% extends '@styles/backend/portfolio/index.html.twig' %}
+
+{% block body %}
+    <h2>{{sub_header |trans }}</h2>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}

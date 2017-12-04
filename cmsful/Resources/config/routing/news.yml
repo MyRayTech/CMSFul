@@ -1,0 +1,11 @@
+news_index:
+    path: /{_locale}/news
+    defaults: { _controller: CMS:News:index }
+    requirements:
+        _locale: en|fr
+    
+news_article:
+    path: "/{_locale}/%article_link%/{slug}"
+    defaults: { _controller: CMS:News:article }
+    requirements:
+        _locale: en|fr

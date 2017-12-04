@@ -1,0 +1,17 @@
+## YAML Template.
+---
+admin_role_add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration\Role:add}
+
+admin_role_edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration\Role:edit}
+    
+admin_role_delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration\Role:delete}
+
+admin_role_manage:
+    path: "/"
+    defaults: {_controller: CMS:Administration\Role:index}

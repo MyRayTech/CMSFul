@@ -1,0 +1,5 @@
+blog_post:
+    path: "/{_locale}/%post_link%/{slug}"
+    defaults: {_controller: CMS:Blog:post }
+    requirements:
+        _locale: en|fr

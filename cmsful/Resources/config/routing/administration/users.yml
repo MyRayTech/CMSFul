@@ -1,0 +1,29 @@
+## YAML Template.
+---
+admin.users.roles:
+    resource: "@CMS/Resources/config/routing/administration/users_role.yml"
+    prefix: "/role"
+    
+admin_users_add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration\Users:add}
+    
+admin_users_edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration\Users:edit}
+    
+admin_users_delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration\Users:delete}
+    
+admin_users_change_pass:
+    path: "/password-reset/{id}"
+    defaults: {_controller: CMS:Administration\Users:pass}
+    
+admin_users_role:
+    path: "/role/{id}"
+    defaults: {_controller: CMS:Administration\Users:role}
+
+admin_users_manage:
+    path: "/"
+    defaults: {_controller: CMS:Administration\Users:index}

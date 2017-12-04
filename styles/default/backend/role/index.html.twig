@@ -1,0 +1,30 @@
+{% extends "@styles/backend/layout.html.twig" %}
+
+{% block admin_sidebar %}
+		<li class="nav-item"><a class="nav-link{% if sub_menu == 'list' %} active{% endif %}" href="{{admin_url}}roles">{{ 'role.list'|trans}}</a></li>
+		<li class="nav-item"><a class="nav-link{% if sub_menu == 'add' %} active{% endif %}" href="{{admin_url}}roles/add">{{ 'create.role'|trans}}</a></li>
+{% endblock %}
+{% block body %}
+	<h1 class="page-header">{{ 'role.list'|trans}}</h1>
+	<div class="container-fluid">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>{{ 'name'|trans}}</th>
+					<th>{{ 'actions'|trans}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for role in roles %}
+				<tr>
+                                    <td>{{ role.name }}</td>
+					<td>
+						<a href="{{admin_url}}roles/edit/{{role.id}}"><span class="fa fa-edit"></span></a>
+						<a href="{{admin_url}}roles/delete/{{role.id}}"><span class="fa fa-remove"></span></a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

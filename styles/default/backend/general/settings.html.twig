@@ -1,0 +1,12 @@
+{% extends '@styles/backend/layout.html.twig' %}
+
+{% block body %}
+     <div class="card site-setting"><div class="card-header">{{sub_header |trans }}</div>
+    <div class="card-block">
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    </div>
+     </div>
+{% endblock body %}

@@ -1,0 +1,46 @@
+admin:
+    resource: "@CMS/Resources/config/routing/admin.yml"
+    #prefix: /api/v1
+api:
+    resource: "@CMS/Resources/config/routing/api.yml"
+    prefix: /api/v1
+    
+news:
+    resource: "@CMS/Resources/config/routing/news.yml"
+ 
+page:
+    resource: "@CMS/Resources/config/routing/page.yml"
+    
+gallery:
+    resource: "@CMS/Resources/config/routing/gallery.yml"
+    
+blog:
+    resource: "@CMS/Resources/config/routing/blog.yml"
+
+portfolio:
+    resource: "@CMS/Resources/config/routing/portfolio.yml"
+    
+comment_save:
+    path: /save-comment
+    defaults: {_controller: CMS:Comment:getForm }
+    
+cms_index_page:
+    path: /{_locale}
+    defaults: {_controller: CMS:Main:index, _locale: en }
+    requirements:
+        _locale: en|fr
+     
+login:
+    path: /login
+    defaults: {_controller: CMS:Security\Login:login}
+    
+security_check:
+    path: /login_check
+    defaults: {_controller: CMS:Security\Login:check}
+    
+logout:
+    path: /logout
+    
+register:
+    path: /register
+    defaults: {_controller: CMS:Security\Registration:view}

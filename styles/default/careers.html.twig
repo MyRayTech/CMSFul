@@ -1,0 +1,22 @@
+{% extends '@styles/layout.html.twig' %}
+
+{% block body %}
+    <h1>{{title}}</h1>
+    
+    <p>Employment opportunities at Excell-Pro Machine Shop, will also be advertised on this site as they become available.  For information or to submit your CV, please send an e-mail to <a style="text-decoration: underline;" href=mailto:info@excell-pro.com>info@excell-pro.com</a>.</p>
+
+    {% for job in jobs %}
+        <div class="right"># of positions opened : {{ job.amount }}<br />Expiry date: {{ job.date| date() }}</div>
+        <div class="carhead"><h3>{{ job.name }}</h3></div>
+        <div class="career">{{ job.text }}</div>
+    {% endfor %}
+    <p>Interested candidates should send their resume to the Human Resources Manager (contact info listed below):</p>
+<div class="indent">•	By email: <a href="mailto:info@excell-pro.com">info@excell-pro.com</a><br />
+•	By fax: (506) 542-5565<br />
+•	By mail: </div><br />
+<div class="bigindent">Excell-Pro Machine Shop.<br />
+Att.: Line Savoie<br />
+365 rue Acadie<br />
+Beresford, NB E8K 2E4</div>
+<p>Should you have any questions, please feel free to contact us.</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+language: php
+
+php:
+- 7.0
+- 7.1
+  
+install:
+    - composer install --no-scripts --no-plugins
+    - chmod +x bin/console
+    - chmod +x travis/setup-database.sh
+    - travis/setup-database.sh
+    - php bin/console doctrine:schema:create

@@ -1,0 +1,70 @@
+{% extends "@styles/layout.html.twig" %}
+
+{% set title = 'Portfolio' %}
+{% block stylesheets %}<link rel="stylesheet" type="text/css" href="{{ asset('css/portfolio.css') }}" />{% endblock %}
+
+{% block body %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row row_title_galery">
+            <div class="offset-md-3 col-lg-6">
+                <h1 class="page-header bg_title_folio wow flip">Your portfolio
+                    <small>with CMSFul</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-fluid img_border" src="{{ asset('images/portfolio_2col/projet1.png') }}" alt="Your Title">
+                </a>
+                <h3>
+                    <a class="text-center" href="#">Project One</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-fluid img_border" src="{{ asset('images/portfolio_2col/projet2.png') }}" alt="Your image title">
+                </a>
+                <h3>
+                    <a class="text-center" href="#">Project Two</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+<div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-fluid img_border" src="{{ asset('images/portfolio_2col/projet3.png') }}" alt="Your Title">
+                </a>
+                <h3>
+                    <a class="text-center" href="#">Project Three</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-fluid img_border" src="{{ asset('images/portfolio_2col/projet4.png') }}" alt="Your image title">
+                </a>
+                <h3>
+                    <a class="text-center" href="#">Project four</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+    </div>
+        <!-- Footer -->
+{% endblock %}
+
+    
+    

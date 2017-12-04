@@ -1,0 +1,23 @@
+{% extends "@styles/backend/layout.html.twig" %}
+
+{% block admin_sidebar %}
+    <li class="nav-item"><a class="nav-link {% if sub_active == 'dashboard' %}active{% endif %}" href="#"><i class="icon-speedometer"></i> {{ 'dashboard'|trans}}</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">{{ 'general.settings'|trans}} <span class="sr-only">(current)</span></a></li>
+
+{% endblock %}
+{% block body %}
+    <h1 class="page-header">{{ 'dashboard'|trans}}</h1>
+    <div class='row'>
+        <div class='col-sm-6'>
+            <div class="card">
+                <div class="card-header">{{'userful.links' |trans}}</div>
+                <div class='card-block'>
+                    <div class='row text-center'>
+                         <div class='col-sm-6'>{{'clear.cache' |trans}}</div><div class='col-sm-6'><a href='{{admin_url}}cache-clear'><button type='button' class='btn btn-sm btn-secondary' >{{'click.here' |trans}}</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+

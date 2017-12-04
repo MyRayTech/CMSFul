@@ -1,0 +1,18 @@
+{% extends "@styles/backend/users/index.html.twig" %}
+
+{% block body %}
+    <div class="card">
+	<div class="card-header">{{ sub_header |trans}}</div>
+	<div class="card-block">
+		{{ form_start(form) }}
+		{{ form_label(form.firstName) }}: {{ form_widget(form.firstName) }}<br />
+                {{ form_label(form.lastName) }}: {{ form_widget(form.lastName) }}<br />
+                {{ form_label(form.username) }}: {{ form_widget(form.username) }}<br />
+                {{ form_label(form.email) }}: {{ form_widget(form.email) }}<br />
+                {{ form_label(form.locale) }}: {{ form_widget(form.locale) }}<br />
+                {{ form_widget(form._token) }}
+                {{ form_widget(form.save) }}
+		{{ form_end(form, {'render_rest': false}) }}
+	</div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "@styles/backend/layout.html.twig" %}
+
+{% form_theme form 'form/fields.html.twig' %}
+
+{% block body %}
+	<div class="card">
+            <div class="card-header">{{sub_header |trans}}</div>
+            <div class="card-block">
+		{{ form(form) }}
+		{{ form_widget(form) }}
+		{{ form_end(form) }}
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+## YAML Template.
+---
+admin_portfolio_add:
+    path: "/add"
+    defaults: {_controller: CMS:Administration\Portfolio:add}
+
+admin_portfolio_edit:
+    path: "/edit/{id}"
+    defaults: {_controller: CMS:Administration\Portfolio:edit}
+    
+admin_portfolio_delete:
+    path: "/delete/{id}"
+    defaults: {_controller: CMS:Administration\Portfolio:delete}
+    
+admin_portfolio_setting:
+    path: "/settings"
+    defaults: {_controller: CMS:Administration\Portfolio:settings }
+
+admin_portfolio_manage:
+    path: "/"
+    defaults: {_controller: CMS:Administration\Portfolio:index}

@@ -1,0 +1,63 @@
+/*
+ *  Author: Kevin Roy
+ *  Date: 2017-11-14
+ */
+@import '~font-awesome/scss/font-awesome.scss';
+@import '../../admin/scss/style.scss';
+
+h1 {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 9px;
+}
+
+.placeholders {
+    padding-bottom: 3rem;
+}
+.placeholder img {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+header.navbar .navbar-brand {
+    background-image: url('../images/cmsful_logo.png');
+    background-size: 100% 100%;
+    width: 155px;
+}
+header.navbar .nav-item.navbrand {
+    width: 155px;
+}
+.user_avatar {
+    border-radius: 50%;
+    width: 50px;
+    height:50px;
+    margin:10px;
+}
+.logout {
+    padding-left:40px;
+    color: #ddd;
+}
+@media (max-width: 786px) {
+    header.navbar .navbar-brand {
+        margin-right: 50px;
+    }
+}
+aside label {
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+    padding: 5px 0 0;
+    margin:0;
+}
+aside .widget {
+    border-bottom: solid 1px #e4e5e6;
+}
+@media (min-width: 991px) {
+  .d-md-up-none {
+    display: none !important; } }
+
+.main .card {
+    margin-top: 15px;
+}
+.card.pages .row {
+    margin-bottom: 15px;
+}

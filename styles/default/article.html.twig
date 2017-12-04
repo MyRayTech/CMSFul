@@ -1,0 +1,13 @@
+{% extends "@styles/layout.html.twig" %}
+
+{% set title = article.name %}
+{% block body %}
+    <div class="pull-right publish">{{'published.date'|trans }} {{ article.createdDate | date(time_format,timezone) }}</div>
+    <h1>{{article.name}}</h1>
+	{{article.content|raw}}
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <hr />
+        {{ render(controller('CMS:Comment:getForm', { 'type': type, 'id': article.id, 'route': redirect })) }}
+        {% endif %}
+        {{ render(controller('CMS:Comment:getComments', { 'type': type, 'id': article.id, 'route': redirect })) }}
+{% endblock %}
