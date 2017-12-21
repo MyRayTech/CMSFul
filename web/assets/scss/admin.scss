@@ -3,7 +3,8 @@
  *  Date: 2017-11-14
  */
 @import '~font-awesome/scss/font-awesome.scss';
-@import '../../admin/scss/style.scss';
+@import '~normalize.css/normalize.css';
+@import '../../../admin/scss/style.scss';
 
 h1 {
     border-bottom: 1px solid #eee;

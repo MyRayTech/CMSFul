@@ -6,8 +6,7 @@
         <title>{{ title |trans}}{% if sitename is defined %} | {{sitename}}{% endif %}</title>
         <!-- Latest compiled and minified CSS -->
         {#<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />#}
-        <link rel="stylesheet" type="text/css" href="{{ asset('build/app.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('build/stylesheet.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/build/stylesheet.css') }}" />
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <script src="{{ asset('build/app.js') }}"></script>
@@ -17,7 +16,7 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-4 offset-md-4 logo text-center"><img class="img-fluid img_logo" src="{{ asset('assets/images/cmsful_logo.png') }}" alt="CMS FUL"></div>
+                <div class="col-md-4 offset-md-4 logo text-center"><img class="img-fluid img_logo" src="{{ asset('assets/build/images/cmsful_logo.png') }}" alt="CMSFul"></div>
             </div>
         </div>
     </header>

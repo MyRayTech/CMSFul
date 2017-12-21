@@ -2,8 +2,8 @@ var Encore = require('@symfony/webpack-encore');
 var webpack = require('webpack');
 
 Encore
-    .setOutputPath('web/build/')
-    .setPublicPath('/build')
+    .setOutputPath('web/assets/build')
+    .setPublicPath('/assets/build')
     .cleanupOutputBeforeBuild()
     .addEntry('app', './web/assets/js/cms.js')
     .addEntry('admin', './web/assets/js/admin.js')
@@ -21,7 +21,7 @@ Encore
      })
     .enableVueLoader()
     .enableSourceMaps(!Encore.isProduction())
-    .enableVersioning()
+    .enableVersioning(Encore.isProduction())
 ;
 
 // export the final configuration

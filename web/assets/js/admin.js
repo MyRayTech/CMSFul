@@ -4,4 +4,4 @@
  * @author:     Kevin Roy <royk@myraytech.net>
  * @package:    CMSFul
  */
-require('../../admin/src/main.js');
+require('../../../admin/src/main.js');

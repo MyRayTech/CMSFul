@@ -59,7 +59,7 @@ security:
                 lifetime: 2592000
                 path: /
                 secure: true
-            provider: cms.authentication_provider
+            provider: cms.user_provider
             pattern: ^/
             form_login:
                 provider: cms.user_provider
