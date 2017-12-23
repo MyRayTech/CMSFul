@@ -11,43 +11,43 @@
 </template>
 
 <script>
-import Column from './Column.vue'
+    import Column from './Column.vue';
 
-export default {
-    name: 'builer-row',
-    data() {
-        return {
-            
-        };
-    },
-    props: ['id', 'identifier', 'classes', 'columns'],
-    methods: {
-        addRow() {
+    export default {
+        name: 'builer-row',
+        data() {
+            return {
+
+            };
+        },
+        props: ['id', 'identifier', 'classes', 'columns'],
+        methods: {
+            addRow: function () {
                 this.$emit('addRow');
-        },
-        editRow() {
-
-        },
-        deleteRow() {
+            },
+            editRow: function () {
+                this.$emit('editRow');
+            },
+            deleteRow: function () {
                 this.$emit('deleteRow');
+            },
+            addColumn: function () {
+                this.columns.push({
+                    identifier: '',
+                    classes: '',
+                    size: 6
+                })
+            },
+            editColumn: function () {
+
+            },
+            deleteColumn: function (index) {
+                this.columns.splice(index, 1);
+            }
         },
-        addColumn() {
-            this.columns.push({
-                identifier:'',
-                classes: '',
-                size: 6
-            })
-        },
-        editColumn() {
-            
-        },
-        deleteColumn(index) {
-            this.columns.splice(index, 1);
+        components: {
+            Column: Column
         }
-    },
-    components: {
-        Column: Column
     }
-}    
 
 </script>

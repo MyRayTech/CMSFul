@@ -1,5 +1,5 @@
 <template>
-    <b-col :md="size" :id="identifier" :class="classes">
+    <b-col :md="size" :id="id" :class="classes">
         <b-row>
             <b-col md="12" class="column controls text-center">
                 Column {{ id }}
@@ -7,11 +7,15 @@
                 <i @click="addColumn" class="fa fa-plus"></i> 
                 <i @click="deleteColumn" class="fa fa-remove"></i>
             </b-col>
+            <BuilderElement v-for="block in elements" :key="block.id" :block="block" />
         </b-row>
+        
     </b-col>
 </template>
 
 <script>
+    import BuilderElement from './Element.vue';
+    
     export default {
         name: 'builder-column',
         data() {
@@ -19,7 +23,7 @@
 
             };
         },
-        props: ['id', 'identifier', 'classes', 'size'],
+        props: ['id', 'identifier', 'classes', 'size', 'elements'],
         methods: {
             editColumn: function () {
 
@@ -30,6 +34,9 @@
             deleteColumn: function () {
                 this.$emit('deleteColumn');
             }
+        },
+        components: {
+            BuilderElement: BuilderElement
         }
     }
 </script>

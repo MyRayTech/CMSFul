@@ -23,16 +23,38 @@
                                 identifier:'',
                                 classes: '',
                                 columns: [{
-                                        id:1,
+                                        id: 1,
                                         identifier:'',
                                         classes: '',
-                                        size: 6
+                                        size: 6,
+                                        elements: [
+                                            {
+                                                type: 'html',
+                                                content: '<div>test</div>'
+                                            },
+                                            {
+                                                type: 'image',
+                                                url: '/assets/images/cmsful_bg.png',
+                                                height: 300,
+                                                width: 300
+                                            }
+                                        ]
                                     },
                                     {
                                         id:2,
                                         identifier:'',
                                         classes: '',
-                                        size: 6
+                                        size: 6,
+                                        elements: [
+                                            {
+                                                type: 'carousel',
+                                                slides: [
+                                                    {
+                                                        content: 'Test'
+                                                    }
+                                                ]
+                                            }
+                                        ]
                                     }
                                 ]
                             },
