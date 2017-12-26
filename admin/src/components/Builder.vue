@@ -1,6 +1,6 @@
 <template>
     <section id="builder">
-        <Container v-for="(container, index) in containers" :key="container.id" v-bind="container" @addContainer="addContainer" @deleteContainer="deleteContainer(index)"></Container>
+        <Container v-for="(container, index) in containers" :key="index" v-bind="container" @addContainer="addContainer" @deleteContainer="deleteContainer(index)"></Container>
     </section>
 </template>
 
@@ -14,16 +14,16 @@
                 content: 'Testing',
                 containers: [
                     {
-                        id: 1,
+                        type: 'container',
                         identifier: "test_1",
                         classes: "test2",
                         rows: [
                             {
-                                id:1,
+                                type: 'row',
                                 identifier:'',
                                 classes: '',
                                 columns: [{
-                                        id: 1,
+                                        type: 'column',
                                         identifier:'',
                                         classes: '',
                                         size: 6,
@@ -41,7 +41,7 @@
                                         ]
                                     },
                                     {
-                                        id:2,
+                                        type: 'row',
                                         identifier:'',
                                         classes: '',
                                         size: 6,
@@ -53,23 +53,31 @@
                                                         content: 'Test'
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                type: 'row',
+                                                children: [
+                                                    {
+                                                        
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                id:2,
+                                type: 'row',
                                 identifier:'',
                                 classes: '',
                                 columns: [{
-                                        id:1,
+                                        type: 'column',
                                         identifier:'',
                                         classes: '',
                                         size: 3
                                     },
                                     {
-                                        id:2,
+                                        type: 'column',
                                         identifier:'',
                                         classes: '',
                                         size: 9
@@ -79,22 +87,22 @@
                         ]
                     },
                     {
-                        id: 2,
+                        type: 'container',
                         identifier: "test_3",
                         classes: "test4",
                         rows: [
                             {
-                                id:1,
+                                type: 'row',
                                 identifier:'',
                                 classes: '',
                                 columns: [{
-                                        id:10,
+                                        type: 'column',
                                         identifier:'',
                                         classes: '',
                                         size: 9
                                     },
                                     {
-                                        id:2,
+                                        type: 'column',
                                         identifier:'',
                                         classes: '',
                                         size: 3
@@ -102,17 +110,17 @@
                                 ]
                             },
                             {
-                                id:2,
+                                type: 'row',
                                 identifier:'',
                                 classes: '',
                                 columns: [{
-                                        id:1,
+                                        type: 'column',
                                         identifier:'',
                                         classes: '',
                                         size: 6
                                     },
                                     {
-                                        id:2,
+                                        type: 'column',
                                         identifier:'',
                                         classes: '',
                                         size: 6
@@ -120,7 +128,7 @@
                                 ]
                             }
                         ]
-                    }
+                    } 
                 ]
             };
         },
@@ -128,20 +136,11 @@
         methods: {
             addContainer: function() {
                 this.containers.push({
+                    type: 'container',
                     identifier: '',
                     classes: '',
                     rows: [
-                        {
-                            identifier:'',
-                            classes: '',
-                            columns: [{
-                                    
-                                    identifier:'',
-                                    classes: '',
-                                    size: 6
-                                }
-                            ]
-                        }
+                        
                     ]
                 });
             },

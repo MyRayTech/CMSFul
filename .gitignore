@@ -2,7 +2,10 @@ vendor/*
 extension/*
 !vendor/composer
 !vendor/autoload.php
-etc/config/parameters.yml
+#etc/config/parameters.yml
 node_modules
 web/json_encode.php
 web/error_log
+yarn-error.log
+.yarnclean
+.ftpquota

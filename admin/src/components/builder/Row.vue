@@ -1,7 +1,7 @@
 <template>
     <b-row :id="identifier" :class="classes">
         <b-col md="12" class="rows controls text-center">
-            Row {{ id }}
+            Row
             <i @click="editRow" class="fa fa-edit"></i> 
             <i @click="addRow" class="fa fa-plus"></i> 
             <i @click="deleteRow" class="fa fa-remove"></i>
@@ -20,7 +20,7 @@
 
             };
         },
-        props: ['id', 'identifier', 'classes', 'columns'],
+        props: ['identifier', 'classes', 'columns'],
         methods: {
             addRow: function () {
                 this.$emit('addRow');

@@ -1,13 +1,13 @@
 <template>
-    <b-col :md="size" :id="id" :class="classes">
+    <b-col :md="size" :id="identifier" :class="classes">
         <b-row>
             <b-col md="12" class="column controls text-center">
-                Column {{ id }}
+                Column 
                 <i @click="editColumn" class="fa fa-edit"></i> 
                 <i @click="addColumn" class="fa fa-plus"></i> 
                 <i @click="deleteColumn" class="fa fa-remove"></i>
             </b-col>
-            <BuilderElement v-for="block in elements" :key="block.id" :block="block" />
+            <BuilderElement v-for="(block, index) in elements" :key="index" :block="block" />
         </b-row>
         
     </b-col>
@@ -23,7 +23,7 @@
 
             };
         },
-        props: ['id', 'identifier', 'classes', 'size', 'elements'],
+        props: ['identifier', 'classes', 'size', 'elements'],
         methods: {
             editColumn: function () {
 

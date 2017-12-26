@@ -1,5 +1,5 @@
 /* 
- * 
+ * Vuex State Store
  */
 
 import Vue from 'vue'
@@ -15,6 +15,7 @@ const debug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
     state: {
         config: {},
+        builder: {},
         user: {}
     },
     actions,

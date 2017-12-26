@@ -3,16 +3,18 @@
 </template>
 
 <script>
+    import BlockRow from './Row'
     import BlockHtml from './blocks/Html'
     import BlockImage from './blocks/Image'
     import BlockCarousel from './blocks/Carousel'
     
     export default {
         name: 'builder-element',
-        props:['id', 'block'],
+        props:['block'],
         data() {
             return {
                 types: {
+                    
                     html: BlockHtml,
                     image: BlockImage,
                     carousel: BlockCarousel

@@ -13,7 +13,7 @@
                                 <b-form-input v-model="form.email" type="email"></b-form-input>
                             </b-form-group>
                             <b-form-group label="Locale">
-                                <b-form-input v-model="form.locale" type="language"></b-form-input>
+                                <!--<b-form-input v-model="form.locale" type=></b-form-input>-->
                             </b-form-group>
                         </b-col>
                     </b-row>
@@ -32,12 +32,13 @@
         name: 'settings',
         data() {
             return {
-                form: {
-                    sitename: '',
-                    email: '',
-                },
                 show: true
             };
+        },
+        computed: {
+            form() {
+                return this.$store.getters.generalSettings;
+            }
         },
         methods: {
             onSubmit(evt) {
@@ -54,6 +55,9 @@
                 this.show = false;
                 this.$nextTick(() => { this.show = true });
             }
+        },
+        created() {
+            this.$store.dispatch('LOAD_CONFIG');
         }
     }
 </script>

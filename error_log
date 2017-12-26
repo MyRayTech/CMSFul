@@ -1,0 +1,11 @@
+[19-Dec-2017 01:43:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/devcmsful/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/DependencyInjection/Configuration.php on line 144
+[19-Dec-2017 01:43:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/devcmsful/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/DependencyInjection/Configuration.php on line 144
+[19-Dec-2017 01:49:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/devcmsful/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/DependencyInjection/Configuration.php on line 144
+[19-Dec-2017 01:49:08 UTC] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "PaginationExtension" from namespace "Knp\Bundle\PaginatorBundle\Twig\Extension".
+Did you forget a "use" statement for another namespace? in /home/devcmsful/etc/cache/dev/ContainerKlbxepp/etcDevDebugProjectContainer.php:1738
+Stack trace:
+#0 /home/devcmsful/etc/cache/dev/ContainerKlbxepp/etcDevDebugProjectContainer.php(1143): ContainerKlbxepp\etcDevDebugProjectContainer->getKnpPaginator_Twig_Extension_PaginationService()
+#1 /home/devcmsful/etc/cache/dev/ContainerKlbxepp/getTwig_CacheWarmerService.php(9): ContainerKlbxepp\etcDevDebugProjectContainer->getTwigService()
+#2 /home/devcmsful/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ServiceLocator.php(64): ContainerKlbxepp\etcDevDebugProjectContainer->{closure}()
+#3 /home/devcmsful/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/CacheWarmer/TemplateCacheCacheWarmer.php(63): Symfony\Component\DependencyInjection\ServiceLocator->get('twig')
+#4 /home/de in /home/devcmsful/etc/cache/dev/ContainerKlbxepp/etcDevDebugProjectContainer.php on line 1738

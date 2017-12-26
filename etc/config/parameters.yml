@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: devrayte_cmsful
+    database_user: devrayte_cmsful
+    database_password: 'kMby2F~I^T.,'
+    mailer_transport: sendmail
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: RayTechHosting
+    jwt_private_key_path: '%kernel.root_dir%/../var/jwt/private.pem'
+    jwt_public_key_path: '%kernel.root_dir%/../var/jwt/public.pem'
+    jwt_key_pass_phrase: cmsful
+    jwt_token_ttl: 3600

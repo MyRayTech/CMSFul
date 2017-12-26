@@ -1,0 +1,41 @@
+{
+    "elements": {
+        "b-container": {
+        "attributes": {
+                "class": {},
+                "style": {}
+            }
+        },
+        "component": {
+            "attributes": {
+                "class": {},
+                "style": {}
+            }
+        },
+        "b-row": {
+            "attributes": {
+                "class": {},
+                "style": {}
+            }
+        },
+        "Column": {
+            "attributes": {
+                "v-bind": {},
+                "addColumn": {},
+                "v-for": {},
+                "deleteColumn": {}
+            }
+        },
+        "b-col": {
+            "attributes": {
+                "lg": {},
+                "md": {},
+                "sm": {},
+                "xs": {},
+                "class": {},
+                "style": {}
+            }
+        }
+    },
+    "attributes": {}
+}
