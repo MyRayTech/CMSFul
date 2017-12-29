@@ -18,3 +18,4 @@ export const DELETE_ROW = 'DELETE_ROW';
 export const DELETE_CONTAINER = 'DELETE_CONTAINER';
 
 export const SET_CONFIG = 'SET_CONFIG';
+export const SET_TOKEN = 'SET_TOKEN';

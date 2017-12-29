@@ -22,10 +22,10 @@
  * THE SOFTWARE.
  */
 
-import client from './client'
+import client from '../client'
 
 export default {
-        fetch() {
-            return client.get('/general/settings');
-        }
+    fetch() {
+        return client.get('/v1/admin/general/settings');
+    }
 }

@@ -14,23 +14,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class MainController extends Controller
 {
-
     public function indexAction() {
         $acl = $this->get('cms.acl');
         if (!$acl->granted('admin.dashboard')) {
             throw new AccessDeniedException('You do not have the required permission for this page.');
         }
-        return $this->render('@styles/backend/index.html.twig', [
-            'active'     => 'home',
-            'title'      => 'dashboard',
-            'sub_active' => '',
-            'sub_menu'   => '',
-            'active'     => 'home',
-        ])->setMaxAge(3600);
+								
+        return new Response($this->renderView('@styles/backend/layout.html.twig', [
+																								'title'      => 'dashboard'	]), Response::HTTP_OK );
     }
 
     public function cacheClearAction(Request $request) {
@@ -49,10 +45,10 @@ class MainController extends Controller
         $success = (bool) preg_match('/successfully/', $content);
 
         if ($success) {
-			if($request->get('redirect')){
-            return $this->redirectToRoute($request->get('redirect'));
-			}
-			return $this->redirectToRoute('admin_panel');
+												if($request->get('redirect')){
+																return $this->redirectToRoute($request->get('redirect'));
+												}
+												return $this->redirectToRoute('admin_panel');
         }
         return $this->redirectToRoute('admin_panel');
     }

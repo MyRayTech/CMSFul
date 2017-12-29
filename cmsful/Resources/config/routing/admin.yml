@@ -1,48 +1,8 @@
-admin.general.settings:
-    path: "%admin_link%/general/settings"
-    defaults: { _controller: CMS:Administration\General\Settings:get }
-
-admin.navigation:
-    resource: "@CMS/Resources/config/routing/administration/navigation.yml"
-    prefix: "%admin_link%/navigation"
-    
-admin.users:
-    resource: "@CMS/Resources/config/routing/administration/users.yml"
-    prefix: "%admin_link%/users"
-    
-admin.roles:
-    resource: "@CMS/Resources/config/routing/administration/role.yml"
-    prefix: "%admin_link%/roles"
-
-admin.portfolio:
-    resource: "@CMS/Resources/config/routing/administration/portfolio.yml"
-    prefix: "%admin_link%/portfolio"
-    
-admin.blog:
-    resource: "@CMS/Resources/config/routing/administration/blog.yml"
-    prefix: "%admin_link%/blog"
-    
-admin.content:
-    resource: "@CMS/Resources/config/routing/administration/content.yml"
-    prefix: "%admin_link%/content"
-    
-admin.news:
-    resource: "@CMS/Resources/config/routing/administration/news.yml"
-    prefix: "%admin_link%/news"
-    
-admin.gallery:
-    resource: "@CMS/Resources/config/routing/administration/gallery.yml"
-    prefix: "%admin_link%/gallery"
-    
-admin.widget:
-    resource: "@CMS/Resources/config/routing/administration/widget.yml"
-    prefix: "%admin_link%/widget"
-
-    
 admin.cache_clear:
     path: "%admin_link%/cache-clear"
-    defaults: { _controller: CMS:Administration\Main:cacheClear }
+    defaults: { _controller: CMS:Administration\Main:cacheClear }   
     
 admin_panel:
     path: "%admin_link%/"
     defaults: { _controller: CMS:Administration\Main:index }
+    

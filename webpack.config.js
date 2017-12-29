@@ -25,4 +25,8 @@ Encore
 ;
 
 // export the final configuration
-module.exports = Encore.getWebpackConfig();
+ var config = Encore.getWebpackConfig();
+ config.resolve.alias = {
+     'vue$': 'vue/dist/vue.js'
+ }
+ module.exports = config

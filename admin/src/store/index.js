@@ -4,6 +4,7 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
+//import * as modules from './modules/'
 import * as actions from './actions'
 import * as getters from './getters'
 import * as mutations from './mutations'
@@ -14,6 +15,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
     state: {
+        token: '',
         config: {},
         builder: {},
         user: {}
@@ -22,7 +24,7 @@ export default new Vuex.Store({
     getters,
     mutations,
     modules: {
-
+        
     },
     strict: debug,
     plugins: []

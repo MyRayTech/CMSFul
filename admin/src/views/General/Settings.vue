@@ -56,7 +56,7 @@
                 this.$nextTick(() => { this.show = true });
             }
         },
-        created() {
+        mounted() {
             this.$store.dispatch('LOAD_CONFIG');
         }
     }
