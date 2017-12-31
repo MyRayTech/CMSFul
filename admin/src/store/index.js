@@ -4,7 +4,7 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
-//import * as modules from './modules/'
+import config from './modules/config'
 import * as actions from './actions'
 import * as getters from './getters'
 import * as mutations from './mutations'
@@ -24,7 +24,7 @@ export default new Vuex.Store({
     getters,
     mutations,
     modules: {
-        
+        config
     },
     strict: debug,
     plugins: []

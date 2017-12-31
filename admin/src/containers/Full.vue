@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <AppHeader/>
-        <template v-if="authed == false">
+        <template v-if="authed === false">
             <Login @tokenIsSet="tokenIsSet"/>
         </template>
         <template v-else>
@@ -35,18 +35,22 @@
         data()
         {
             return {
+                authed: false,
                 nav: nav.items
             }
         },
-        computed: {
+        watch: {
             authed()
             {
-                if(this.$store.getters.getToken !== null)
+                const token = this.$store.getters.generalSettings
+                if(!token || token === '' || token === null)
                 {
-                    return true
+                    return false
                 }
-                return false
-            },
+                return true
+            }
+        },
+        computed: {
             name()
             {
                 return this.$route.name
@@ -57,9 +61,12 @@
             }
         },
         methods: {
-            tokenIsSet() {
-                auth
+            tokenIsSet(set) {
+                if(set)
+                {
+                    this.$nextTick(() => {this.authed = set})
+                }
             }
-        }
+        } 
     }
 </script>

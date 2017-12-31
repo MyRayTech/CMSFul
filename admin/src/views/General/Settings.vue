@@ -37,7 +37,7 @@
         },
         computed: {
             form() {
-                return this.$store.getters.generalSettings;
+                 return this.$store.getters.generalSettings;
             }
         },
         methods: {
@@ -46,18 +46,18 @@
                 var data = JSON.stringify(this.form);
                 alert(data);
             },
-            onReset: function() {
+            onReset: function(evt) {
                 evt.preventDefault();
                 // Reset our form values
-                this.form.sitename = '';
-                this.form.email = '';
+                this.$store.dispatch('grabConfig');
                 // Trick to reset/clear native browser form validation state
                 this.show = false;
                 this.$nextTick(() => { this.show = true });
+                
             }
         },
         mounted() {
-            this.$store.dispatch('LOAD_CONFIG');
+            
         }
     }
 </script>

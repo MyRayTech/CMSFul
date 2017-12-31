@@ -21,11 +21,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import Axios from 'axios'
+import Vue from 'vue'
 
-import client from '../client'
+Vue.use(Axios)
 
 export default {
-    fetch() {
-        return client.get('/v1/admin/general/settings');
+    state: {
+        sitename: '',
+        email: ''
+    },
+    getters: {
+        generalSettings: (state) => {
+            return state.config;
+        }
+    },
+    actions: {
+        grabConfig: ({state, commit}) => {
+            Axios.get('/app_dev.php/api/v1/admin/general/settings',{}, {
+                    headers: {
+                        authorization: this.$store.getter.getToken
+                    }
+                })
+            .then((response) => {
+                console.info(response)
+                //commit('SET_TOKEN',{list: response.data})
+            })
+        }
+    },
+    mutations: {
+        SET_CONFIG: (state, {list}) => {
+            state.config = list;
+        }
     }
 }

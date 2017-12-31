@@ -4,7 +4,7 @@
  * @author Kevin Roy <royk@myraytech.net>
  */
 import Axios from 'axios'
-let client = null
+let client = {}
 var token = this.$store.getters.getToken
 
 export default client = Axios.create({

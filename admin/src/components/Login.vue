@@ -45,6 +45,9 @@
               show: true
           }  
         },
+        watch: {
+            
+        },
         methods: {
             onSubmit() {
                 Axios.post('/app_dev.php/api/login_check', qs.stringify({
@@ -57,7 +60,11 @@
                 })
                 .then((response) => {
                     this.$store.dispatch('SET_TOKEN', response.data.token)
-                    this.$emit('tokenIsSet')
+                    var token = this.$store.getters.getToken
+                    if(!token || token !== null || token !== '')
+                    {
+                        this.$emit('tokenIsSet', true)
+                    }
                 })
                 .catch((err) => {
                         this.errors.push(err)

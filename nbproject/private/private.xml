@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/CMSFul/web/assets/js/cms.js</file>
-            <file>file:/D:/CMSFul/styles/default/layout.html.twig</file>
-            <file>file:/D:/CMSFul/Dockerfile</file>
-            <file>file:/D:/CMSFul/web/assets/scss/admin.scss</file>
-            <file>file:/D:/CMSFul/styles/default/backend/layout.html.twig</file>
-            <file>file:/D:/CMSFul/web/assets/scss/stylesheet.scss</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
