@@ -2,6 +2,11 @@
     <b-container id="login">
         <b-row>
             <b-col md="6" offset="3">
+                <template v-for="error in errors">
+                    <template v-if="error.message">
+                        <b-alert variant="danger" show><i class="fa fa-close"></i> {{ error.response.data.message }}</b-alert>
+                    </template>
+                </template>
                 <b-form @submit="onSubmit" @reset="onReset" v-if="show">
                     <b-form-group id="username_group"
                                   label="Username:"
@@ -45,9 +50,6 @@
               show: true
           }  
         },
-        watch: {
-            
-        },
         methods: {
             onSubmit() {
                 Axios.post('/app_dev.php/api/login_check', qs.stringify({
@@ -67,7 +69,8 @@
                     }
                 })
                 .catch((err) => {
-                        this.errors.push(err)
+                    //console.info(this.errors)
+                    this.errors.push(err)
                 })
             },
             onReset(evt) {

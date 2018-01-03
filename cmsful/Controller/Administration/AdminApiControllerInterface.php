@@ -15,5 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
 	*/
 interface	AdminApiControllerInterface {
 				public function getAction(Request $request);
-
+				public function postAction(Request $request);
+				public function deleteAction(Request $request);
 }

@@ -1,0 +1,8 @@
+## YAML Template.
+---
+
+api.admin.content.page.get:
+    path: /pages
+    defaults: {_controller: CMS:Administration\Api\Content\Page:get}
+    methods: [GET]
+   

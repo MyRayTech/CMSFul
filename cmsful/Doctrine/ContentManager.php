@@ -16,5 +16,5 @@ namespace CMS\Doctrine;
  */
 class ContentManager
 {
-	//put your code here
+	
 }

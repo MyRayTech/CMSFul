@@ -5,6 +5,14 @@
     <div class="container">
         <div class="row">
             <div class="from_login col-md-4 offset-md-4 text-center">
+                {# ...or you can read and display every flash message available #}
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="flash-{{ label }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
                 <form action="{{ path('security_check') }}" method="post">
                     <h2>{{ 'Please sign in' }}</h2>
                     <label for="inputUsername">Username</label>

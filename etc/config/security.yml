@@ -59,13 +59,12 @@ security:
                 lifetime: 2592000
                 path: /
                 secure: true
+                always_remember_me: true
             provider: cms.user_provider
             pattern: ^/
             form_login:
                 provider: cms.user_provider
                 csrf_token_generator: security.csrf.token_manager
-                # if you are using Symfony < 2.8, use the following config instead:
-                # csrf_provider: form.csrf_provider
             logout:       true
             anonymous:    ~
 

@@ -1,0 +1,8 @@
+## YAML Template.
+---
+
+api.admin.content.projects.get:
+    path: /projects
+    defaults: {_controller: CMS:Administration\Api\Content\Project:get}
+    methods: [GET]
+   

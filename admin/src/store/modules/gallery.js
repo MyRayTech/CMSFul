@@ -21,33 +21,5 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import * as types from '../mutation_types'
-import Axios from 'axios'
-import Vue from 'vue'
 
-Vue.use(Axios)
 
-export default {
-    state: [],
-    mutations: {
-        SET_PAGES:(state, pages) => {
-            state = pages
-        }
-    },
-    actions: {
-        grabPages: (context) => {
-            Axios.get('/app_dev.php/api/v1/admin/content/pages', {
-                headers: {
-                        Authorization: context.rootState.token
-                    }
-                }).then((response) => {
-                    context.commit(types.SET_PAGES, {pages: response.data})
-                })
-        }
-    },
-    getters: {
-        pages: (state) => {
-            return state;
-        }
-    }
-}

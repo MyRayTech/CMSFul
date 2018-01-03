@@ -1,4 +1,4 @@
-/* 
+/*
  * Vuex mutation types
  */
 
@@ -19,3 +19,6 @@ export const DELETE_CONTAINER = 'DELETE_CONTAINER';
 
 export const SET_CONFIG = 'SET_CONFIG';
 export const SET_TOKEN = 'SET_TOKEN';
+export const SET_PROJECTS = 'SET_PROJECTS';
+export const SET_PAGES = 'SET_PAGES';
+export const SET_POSTS = 'SET_POSTS';

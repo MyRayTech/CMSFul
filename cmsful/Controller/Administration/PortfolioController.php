@@ -53,7 +53,7 @@ class PortfolioController extends Controller implements AdminControllerInterface
                 $project->setImage($data->getImage());
             }
             $project->setName($data->getName());
-			$project->setSlug($slugger->slugify($data->getName()));
+												$project->setSlug($slugger->slugify($data->getName()));
             $project->setSubheader($data->getSubheader());
             $project->setDate($data->getDate());
             $project->setDescription($data->getDescription());

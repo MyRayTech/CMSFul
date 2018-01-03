@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2017 Reaper.
+ * Copyright 2018 Reaper.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,36 +28,26 @@ import Vue from 'vue'
 Vue.use(Axios)
 
 export default {
-    state: {},
-    getters: {
-        generalSettings: (state) => {
-            return state;
+    state: [],
+    mutations: {
+        SET_PROJECTS(state, projects) {
+            state = projects
         }
     },
     actions: {
-        grabConfig: ({state, commit, rootState}) => {
-            Axios.get('/app_dev.php/api/v1/admin/general/settings', {
-                    headers: {
-                        Authorization: rootState.token
-                    }
-                })
-            .then((response) => {
-                commit(types.SET_CONFIG, {list: response.data})
-            })
-        },
-        setSettings: ({state, commit, rootState}, list) => {
-            Axios.post('/app_dev.php/api/v1/admin/general/settings',list, {
-                    headers: {
-                        Authorization: rootState.token
+        grabProjects: (context) => {
+            Axios.get('/app_dev.php/api/v1/admin/content/projects', {
+                headers: {
+                        Authorization: context.rootState.token
                     }
                 }).then((response) => {
-                    commit(types.SET_CONFIG, {list: list})
+                    context.commit(types.SET_PROJECTS, {projects: response.data})
                 })
         }
     },
-    mutations: {
-        SET_CONFIG: (state, {list}) => {      
-            state = list;
+    getters: {
+        getProjects: (state) => {
+            return state;
         }
     }
 }

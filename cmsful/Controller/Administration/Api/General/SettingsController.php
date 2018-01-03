@@ -38,7 +38,16 @@ class	SettingsController extends Controller	implements	AdminApiControllerInterfa
 								return $response;
 				}
 
-				public	function	put()	{
+				public	function	postAction(Request $request)	{
+								$config = $this->get('cms.config');
+								//dump($request);
+								$status_code = 201;
+								
+								$response = new JsonResponse('', $status_code);
+								return $response;
+				}
+
+				public	function	deleteAction(Request	$request)	{
 								
 				}
 

@@ -37,27 +37,26 @@
         },
         computed: {
             form() {
-                 return this.$store.getters.generalSettings;
+                return this.$store.getters.generalSettings
             }
         },
         methods: {
             onSubmit(evt) {
                 evt.preventDefault();
-                var data = JSON.stringify(this.form);
-                alert(data);
+                console.log(this)
+                this.$store.dispatch('setSettings')
             },
-            onReset: function(evt) {
+            onReset(evt) {
                 evt.preventDefault();
                 // Reset our form values
-                this.$store.dispatch('grabConfig');
+                this.$store.getters.generalSettings;
                 // Trick to reset/clear native browser form validation state
                 this.show = false;
                 this.$nextTick(() => { this.show = true });
-                
             }
         },
         mounted() {
-            
+            this.$store.dispatch('grabConfig');
         }
     }
 </script>

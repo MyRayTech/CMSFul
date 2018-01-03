@@ -4,3 +4,7 @@
 api.admin.general:
     resource: "@CMS/Resources/config/routing/api/administration/general.yml"
     prefix: /general
+    
+api.admin.content:
+    resource: "@CMS/Resources/config/routing/api/administration/content.yml"
+    prefix: /content
