@@ -2,7 +2,7 @@
 pipeline {
     agent {
         docker {
-            image 'php-7.0-alpine' 
+            image 'php:7.0-alpine' 
             args '-p 3000:3000' 
         }
     }
