@@ -1,6 +1,6 @@
 <template>
     <section id="builder">
-        <Container v-for="(container, index) in page" :key="index" v-bind="container" @addContainer="addContainer" @deleteContainer="deleteContainer(index)"></Container>
+        <Container v-for="(container, index) in content" :key="index" v-bind="container" @addContainer="addContainer" @deleteContainer="deleteContainer(index)"></Container>
     </section>
 </template>
 
@@ -9,12 +9,43 @@
     
     export default {
         name: 'builder',
-        data() {
-            return {
-                
-            };
-        },
         props: ['page'],
+        computed: {
+            content() {
+                /*if(this.page !== '')
+                {
+                    return this.page
+                }*/
+                return [
+                    {
+                        type: 'container',
+                        identifier: '',
+                        classes: '',
+                        rows: [
+                            {
+                                type: 'row',
+                                identifier: '',
+                                classes: '',
+                                columns: [
+                                    {
+                                        type: 'column',
+                                        size: '6',
+                                        identifier: '',
+                                        classes: '',
+                                        elements: [
+                                            {
+                                                type: 'html',
+                                                content: 'tester'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
         methods: {
             addContainer: function() {
                 this.containers.push({
@@ -33,7 +64,6 @@
                 this.containers.splice(index, 1);
             }
         },
-        created() {},
         components: {
             Container: Container
         }

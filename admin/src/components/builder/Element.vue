@@ -14,7 +14,6 @@
         data() {
             return {
                 types: {
-                    
                     html: BlockHtml,
                     image: BlockImage,
                     carousel: BlockCarousel

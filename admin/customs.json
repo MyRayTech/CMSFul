@@ -1,21 +1,22 @@
 {
     "elements": {
         "b-container": {
-        "attributes": {
-                "class": {},
-                "style": {}
+            "attributes": {
+                "style": {},
+                "fluid": {},
+                "class": {}
             }
         },
         "component": {
             "attributes": {
-                "class": {},
-                "style": {}
+                "style": {},
+                "class": {}
             }
         },
         "b-row": {
             "attributes": {
-                "class": {},
-                "style": {}
+                "style": {},
+                "class": {}
             }
         },
         "Column": {
@@ -28,12 +29,12 @@
         },
         "b-col": {
             "attributes": {
-                "lg": {},
                 "md": {},
                 "sm": {},
+                "style": {},
+                "lg": {},
                 "xs": {},
-                "class": {},
-                "style": {}
+                "class": {}
             }
         }
     },

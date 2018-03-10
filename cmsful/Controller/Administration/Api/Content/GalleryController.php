@@ -30,16 +30,16 @@ use CMS\Controller\Administration\AdminApiControllerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use CMS\Entity\Page;
+use CMS\Entity\Image;
 use CMS\Util\ApiSerializer;
 use CMS\Util\Slugger;
 
 /**
-	* Pages
+	* Gallery
 	*
 	* @author Reaper
 	*/
-class	PageController extends Controller implements AdminApiControllerInterface	{
+class	GalleryController extends Controller implements AdminApiControllerInterface	{
 				
 				/* @var CMS\Util\ApiSerializer  $serializer */
 				protected $serializer;
@@ -50,21 +50,17 @@ class	PageController extends Controller implements AdminApiControllerInterface	{
 				
 				public	function	deleteAction(Request	$request)	{
 								$em = $this->getDoctrine()->getManager();
-								$page = $em->getRepository('CMS:Page')->find($request->get('id'));
+								$image = $em->getRepository('CMS:Image')->find($request->get('id'));
 								
-								$em->remove($page);
+								$em->remove($article);
 								$em->flush();
 								return new JsonResponse();
 				}
 
 				public	function	getAction(Request	$request)	{							
 								$em = $this->getDoctrine()->getManager();
-								if( empty($request->get('id'))) {
-												$pages = $em->getRepository('CMS:Page')->findAll();
-								} else {
-												$pages = $em->getRepository('CMS:Page')->find($request->get('id'));
-								}
-								$content = $this->serializer->normalize($pages,	'json');
+								$gallery = $em->getRepository('CMS:Image')->findAll();
+								$content = $this->serializer->normalize($gallery,	'json');
 								
 								return new JsonResponse($content, 200, [
 												'Content-Type' => 'application/vnd.api+json'
@@ -75,14 +71,14 @@ class	PageController extends Controller implements AdminApiControllerInterface	{
 								$config = $this->get('cms.config');
 								$em = $this->getDoctrine()->getManager();
 								
-        $page = new Page();
+        $image = new Image();
         $slugger = new Slugger();
 								
 								$status = 200;
 								$headers = [
 											 'Content-Type' => 'application/vnd.api+json',
 								];
-								$response = new JsonResponse($page);
+								$response = new JsonResponse($image);
 								$response->headers->add($headers);
 								return $response;
 				}

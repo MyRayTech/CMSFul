@@ -28,21 +28,29 @@ import Vue from 'vue'
 Vue.use(Axios)
 
 export default {
+    namespaced: true,
     state: [],
     mutations: {
-        SET_PAGES:(state, pages) => {
+        SET_PAGES: (state, pages) => {
             state = pages
         }
     },
     actions: {
-        grabPages: (context) => {
+        grab: (context) => {
             Axios.get('/app_dev.php/api/v1/admin/content/pages', {
                 headers: {
-                        Authorization: context.rootState.token
-                    }
-                }).then((response) => {
-                    context.commit(types.SET_PAGES, {pages: response.data})
-                })
+                    Authorization: context.rootState.token
+                }
+            }).then((response) => {
+                context.commit(types.SET_PAGES, {pages: response.data})
+            })
+        },
+        grabOne: (context) => {
+            Axios.get('/app_dev.php/api/v1/admin/content/pages/' + id, {
+                headers: {
+                    Authorization: context.rootState.token
+                }
+            })
         }
     },
     getters: {

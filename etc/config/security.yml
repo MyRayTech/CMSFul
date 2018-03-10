@@ -52,6 +52,7 @@ security:
         login:
             pattern: ^/login$
             anonymous: true
+            logout_on_user_change: true
 
         main:
             remember_me:
@@ -67,6 +68,7 @@ security:
                 csrf_token_generator: security.csrf.token_manager
             logout:       true
             anonymous:    ~
+            logout_on_user_change: true
 
     access_control:
         - { path: ^/api/login,  roles: IS_AUTHENTICATED_ANONYMOUSLY }

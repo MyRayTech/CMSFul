@@ -1,0 +1,8 @@
+## YAML Template.
+---
+
+api.admin.content.article.get:
+    path: /articles
+    defaults: {_controller: CMS:Administration\Api\Content\Article:get}
+    methods: [GET]
+   

@@ -4,7 +4,9 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
+import articles from './modules/articles'
 import config from './modules/config'
+import gallery from './modules/gallery'
 import projects from './modules/projects'
 import pages from './modules/pages'
 import posts from './modules/posts'
@@ -19,8 +21,6 @@ const debug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
     state: {
         token: '',
-        config: {},
-        projects: {},
         builder: {},
         user: {},
     },
@@ -28,10 +28,12 @@ export default new Vuex.Store({
     getters,
     mutations,
     modules: {
+        articles,
         config,
-        projects,
+        gallery,
         pages,
-        posts
+        posts,
+        projects
     },
     strict: debug,
     plugins: []

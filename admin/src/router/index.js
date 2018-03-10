@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import store from '../store/'
-import Router from 'vue-router';
+        import Router from 'vue-router';
 
 // Containers
 import Full from '../containers/Full';
@@ -76,21 +76,7 @@ const router = new Router({
                         {
                             path: 'project',
                             name: 'Project',
-                            component: Project,
-                            children: [
-                                {
-                                    path: 'add',
-                                    name: 'addProject'
-                                },
-                                {
-                                    path: 'edit/:id',
-                                    name: 'editProject',
-                                },
-                                {
-                                    path: 'delete/:id',
-                                    name: 'deleteProject'
-                                }
-                            ]
+                            component: Project
                         },
                         {
                             path: 'gallery',
@@ -102,7 +88,7 @@ const router = new Router({
             ]
         },
         {
-            path:'*',
+            path: '*',
             component: NotFound
         }
     ]

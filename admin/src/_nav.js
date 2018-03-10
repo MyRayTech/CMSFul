@@ -41,6 +41,11 @@ export default {
                 name: 'Project',
                 url: '/content/project',
                 icon: 'fa fa-file-image-o'
+            },
+            {
+                name: 'Gallery',
+                url: '/content/gallery',
+                icon: 'fa fa-file-image-o'
             }
         ]
     }

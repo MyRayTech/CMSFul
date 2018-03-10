@@ -5,7 +5,9 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import VueHtml5Editor from 'vue-html5-editor'
 
+Vue.use(VueHtml5Editor)
 Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */

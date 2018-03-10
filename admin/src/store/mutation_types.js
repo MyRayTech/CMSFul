@@ -22,3 +22,5 @@ export const SET_TOKEN = 'SET_TOKEN';
 export const SET_PROJECTS = 'SET_PROJECTS';
 export const SET_PAGES = 'SET_PAGES';
 export const SET_POSTS = 'SET_POSTS';
+export const SET_ARTICLES = 'SET_ARTICLES';
+export const SET_GALLERY = 'SET_GALLERY';

@@ -9,3 +9,9 @@ api.administration.content.pages:
     
 api.administration.content.posts:
     resource: "@CMS/Resources/config/routing/api/administration/content/posts.yml"
+
+api.administration.content.articles:
+    resource: "@CMS/Resources/config/routing/api/administration/content/articles.yml"
+
+api.administration.content.gallery:
+    resource: "@CMS/Resources/config/routing/api/administration/content/gallery.yml"

@@ -8,9 +8,9 @@
                 <b-tabs>
                     <b-tab title="List" active>
                         <b-table striped hover :items="articles" :fields="fields">
-                                 <template slot="actions" slot-scope="data">
-                                <router-link :to="{ name: 'editPage', params: { id: data.item.id}}"><i class="fa fa-edit"></i></router-link>
-                                <router-link :to="{ name: 'deletePage', params: { id: data.item.id}}"><i class="fa fa-remove"></i></router-link>
+                            <template slot="actions" slot-scope="data">
+                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-remove"></i>
                             </template>
                         </b-table>
                     </b-tab>
@@ -35,12 +35,12 @@
         computed: {
             articles()
             {
-                return this.$store.getters.articles
+                return this.$store.getters['articles/articles']
             }
         },
         mounted()
         {
-            this.$store.dispatch('grabArticles')
+            this.$store.dispatch('articles/grab')
         }
     }
 </script>

@@ -30,16 +30,16 @@ use CMS\Controller\Administration\AdminApiControllerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use CMS\Entity\Page;
+use CMS\Entity\Article;
 use CMS\Util\ApiSerializer;
 use CMS\Util\Slugger;
 
 /**
-	* Pages
+	* Articles
 	*
 	* @author Reaper
 	*/
-class	PageController extends Controller implements AdminApiControllerInterface	{
+class	ArticleController extends Controller implements AdminApiControllerInterface	{
 				
 				/* @var CMS\Util\ApiSerializer  $serializer */
 				protected $serializer;
@@ -50,21 +50,17 @@ class	PageController extends Controller implements AdminApiControllerInterface	{
 				
 				public	function	deleteAction(Request	$request)	{
 								$em = $this->getDoctrine()->getManager();
-								$page = $em->getRepository('CMS:Page')->find($request->get('id'));
+								$article = $em->getRepository('CMS:Article')->find($request->get('id'));
 								
-								$em->remove($page);
+								$em->remove($article);
 								$em->flush();
 								return new JsonResponse();
 				}
 
 				public	function	getAction(Request	$request)	{							
 								$em = $this->getDoctrine()->getManager();
-								if( empty($request->get('id'))) {
-												$pages = $em->getRepository('CMS:Page')->findAll();
-								} else {
-												$pages = $em->getRepository('CMS:Page')->find($request->get('id'));
-								}
-								$content = $this->serializer->normalize($pages,	'json');
+								$articles = $em->getRepository('CMS:Article')->findAll();
+								$content = $this->serializer->normalize($articles,	'json');
 								
 								return new JsonResponse($content, 200, [
 												'Content-Type' => 'application/vnd.api+json'
@@ -75,7 +71,7 @@ class	PageController extends Controller implements AdminApiControllerInterface	{
 								$config = $this->get('cms.config');
 								$em = $this->getDoctrine()->getManager();
 								
-        $page = new Page();
+        $page = new Article();
         $slugger = new Slugger();
 								
 								$status = 200;

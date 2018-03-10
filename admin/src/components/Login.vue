@@ -14,7 +14,7 @@
                         <b-form-input id="username"
                                       type="text"
                                       v-model="form.username"
-                                      required>
+                                      required autofocus>
                         </b-form-input>
                     </b-form-group>
                     <b-form-group id="password_group"

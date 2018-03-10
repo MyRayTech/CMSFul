@@ -31,48 +31,28 @@ export default {
     namespaced: true,
     state: [],
     mutations: {
-        SET: (state, projects) => {
-            state = projects
-        },
-        DELETE: (state, id) => {
-            state.filter(function(item) { return item.id == id}).$remove
+        SET:(state, {articles}) => {
+            console.info(state)
+            console.info(articles)
+            state
+            
+            console.log(state)
+            return state
         }
     },
     actions: {
         grab: (context) => {
-            Axios.get('/app_dev.php/api/v1/admin/content/projects', {
+            Axios.get('/app_dev.php/api/v1/admin/content/articles', {
                 headers: {
                         Authorization: context.rootState.token
                     }
                 }).then((response) => {
-                    context.commit(types.SET_PROJECTS, {projects: response.data}, { root: true })
-                })
-        },
-        grabOne: (context, id) => {
-            return context.state.filter(function(item) {return item.id == id})
-        },
-        delete: (context) => {
-             
-            /*Axios.delete('/app_dev.php/api/v1/admin/content/projects', {
-                headers: {
-                        Authorization: context.rootState.token
-                    }
-            }).then( (response) => {
-                context.commit(types.DELETE_PROJECTS, {id:  response.data.id}, {root: true})
-            })*/
-        },
-        update: (context, data) => {
-            Axios.put('/app_dev.php/api/v1/admin/content/projects/'+ data.id , data, {
-                    headers: {
-                        Authorization: context.rootState.token
-                    }
-                }).then((response) => {
-                    
+                    context.commit('SET_ARTICLES', {articles:response.data}, { root: true})
                 })
         }
     },
     getters: {
-        projects: (state) => {
+        articles: (state) => {
             return state;
         }
     }

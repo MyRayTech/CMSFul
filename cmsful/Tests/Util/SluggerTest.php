@@ -1,3 +1,5 @@
+<?php
+
 /* 
  * The MIT License
  *
@@ -21,34 +23,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import * as types from '../mutation_types'
-import Axios from 'axios'
-import Vue from 'vue'
 
-Vue.use(Axios)
+namespace CMS\Tests\Util;
 
-export default {
-    namespaced: true,
-    state: [],
-    mutations: {
-        SET:(state, {gallery}) => {
-            state = gallery
-        }
-    },
-    actions: {
-        grab: (context) => {
-            Axios.get('/app_dev.php/api/v1/admin/content/gallery', {
-                headers: {
-                        Authorization: context.rootState.token
-                    }
-                }).then((response) => {
-                    context.commit(types.SET_GALLERY, {gallery: response.data}, { root: true})
-                })
-        }
-    },
-    getters: {
-        images: (state) => {
-            return state;
-        }
-    }
+use CMS\Util\Slugger;
+use PHPUnit\Framework\TestCase;
+
+class SluggerTest extends TestCase 
+{
+				public function testSluggify() {
+								$string = 'Unit Test Slugger';
+								$slugger = new Slugger();
+								$slug = $slugger->slugify($string);
+								
+								$this->assertEquals('unit-test-slugger',	$slug);
+				}
 }

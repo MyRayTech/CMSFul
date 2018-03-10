@@ -1,0 +1,8 @@
+## YAML Template.
+---
+
+api.admin.content.gallery.get:
+    path: /gallery
+    defaults: {_controller: CMS:Administration\Api\Content\Gallery:get}
+    methods: [GET]
+   
